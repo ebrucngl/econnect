@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "385089530580",
+    "project_id": "econnect-92074",
+    "storage_bucket": "econnect-92074.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385089530580:android:5e3933765fba9324616941",
+        "android_client_info": {
+          "package_name": "com.example.econnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385089530580-t9ph2dombq7igo6jhj6ud6a0nh7g256g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHqoI7qU7KuW4YS-6DMv5h4LxJY-jerYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385089530580-t9ph2dombq7igo6jhj6ud6a0nh7g256g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
