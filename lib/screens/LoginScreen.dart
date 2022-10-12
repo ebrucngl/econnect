@@ -23,31 +23,33 @@ class _LoginState extends State<Login> {
    {
     return Scaffold(
      
-      body: Center(
+      body: Stack(
                 
         //width: MediaQuery.of(context).size.width,
         //height: 300,
         //color: Colors.deepPurple[200],
         
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      children: <Widget>[
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 270,
+              color: Colors.deepPurple[200],
+            ),
+          ],
+        ),
         
-        child: Column(
-        
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        
-        children:<Widget> [
- 
-          Container(
-            
-            height: 450,
-            child: Card(
-              
+
+       
+            Card( 
+
               elevation: 4.0,
                 color: Colors.white,
-                margin: EdgeInsets.only(left: 40, right: 40),
-                
+                margin: EdgeInsets.only(left: 40, right: 40, top: 165, bottom: 160),       
+
                 child: Padding(
                   padding: const EdgeInsets.all(2),
                   child: Column(
@@ -83,9 +85,7 @@ class _LoginState extends State<Login> {
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
                           ),
-                          
                         ),
-                    
                       ),
 
                        TextFormField(
@@ -142,16 +142,10 @@ class _LoginState extends State<Login> {
                           Navigator.push(context,
                           MaterialPageRoute(builder: (context) => HomePage())); 
                           },
-
-
                           child: Padding(
                             padding: EdgeInsets.only(
-                              top: 6,
-                              bottom: 6,
-                              left: 10,
-                              right: 10,
-                            ),
-                            
+                              top: 6, bottom: 6, left: 10, right: 10,
+                            ), 
                             child: Text(
                               "LOGIN",
                               style: TextStyle(
@@ -169,13 +163,14 @@ class _LoginState extends State<Login> {
                   ),
                 ),
             ),
-          )
+        
         ],
         ),
-      ),           
-      ),
+                 
       
-   );
-                  
+      
+   
+     );    
+              
   }
 }

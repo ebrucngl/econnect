@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 final Uri _url = Uri.parse('https://support.ceiba-healthcare.com/hc/en-us/requests/new');
 
@@ -62,21 +63,17 @@ Future<void> _launchUrl() async {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.deepPurple[200],
         title:Text ('Smart Infusion Administration'),
+        
         actions: <Widget> [
-
-          
-          SizedBox(
-            
+          SizedBox(           
             width: 50,
           child: TextButton(
             style: TextButton.styleFrom(
               primary: Colors.white,
               backgroundColor: Color.fromARGB(255, 112, 69, 139),
-              shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
-              
+              shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),             
               textStyle: TextStyle(
-                fontSize: 14,
-                
+                fontSize: 14,                
               ),    
             ),
               onPressed: _launchUrl,  
@@ -92,17 +89,14 @@ Future<void> _launchUrl() async {
             style: TextButton.styleFrom(
               primary: Colors.white,
               backgroundColor: Colors.blue,
-              shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
-              
+              shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),             
               textStyle: TextStyle(
-                fontSize: 12,
-                
+                fontSize: 12,               
               ),     
             ),
               onPressed: () {
               signOut();
-            },
-            
+            },            
             child: Text('Logout'), 
             ),
             ),
@@ -124,23 +118,39 @@ Future<void> _launchUrl() async {
         children: <Widget> [
 
           ElevatedButton(           
-          onPressed: () => scanBarcodeNormal(),
-          
-          child: 
-          Text('Barcode'),
-          
-          //SvgPicture.asset('lib/images/barcode-medication.3bceaa06.svg',
-          
-          
-          //width: 40,
-          //height: 80,
-          
-          
-          //),   
+          onPressed: () => scanBarcodeNormal(),          
+          child:           
+          SvgPicture.asset('lib/images/barcode-medication.3bceaa06.svg',                   
+          width: 40,
+          height: 80,                            
           ),
-          SizedBox(
-            height: 30,
           ),
+
+          /*Container(
+
+            height: 100,
+            width: 200,
+            child: WebView(
+
+              initialUrl: 'about:blank',
+              onWebViewCreated:
+              (WebViewController webViewController) async {
+                String svgText =
+                await rootBundle.loadString('lib/images/barcode-medication.3bceaa06.svg');
+                String fileText =
+              '<html><style>html,body {background: #C2185B;padding: 0;margin: 0;} svg {width: 100vw; height: 100vh;}</style><body>' +
+              svgText +
+              '</body></html>';
+            webViewController.loadUrl(
+        Uri.dataFromString(
+          fileText,
+          mimeType: 'text/html',
+          //encoding: Encoding.getByName('utf-8'),
+        ).toString(),
+      );
+    },
+  ),
+), */
 
           SizedBox(
             height: 30,
